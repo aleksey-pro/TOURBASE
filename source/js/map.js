@@ -14,7 +14,7 @@ function initMap() {
       disableDefaultUI: true,
       
       // The latitude and longitude to center the map (always required)
-      center: new google.maps.LatLng(59.91, 29.93),
+      center: new google.maps.LatLng(62.23, 36.87),
       
       scrollwheel: false,
       

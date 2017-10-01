@@ -70,5 +70,6 @@ import 'tinymce/themes/modern/theme';
 tinymce.init({
   selector: '#tinymce',
   skin: false,
+  forced_root_block: false,
   content_css : '../assets/css/vendors.css'
 });

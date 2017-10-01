@@ -4,6 +4,7 @@ const express = require('express');
 const content = require('../views/data/content.json');
 const router = express.Router();
 const mongoose = require('mongoose');
+require('../models/prokat-tools');
 
 // const isAdmin = (req, res, next) => {
 //   // если в сессии текущего пользователя есть пометка о том, что он является
@@ -21,11 +22,11 @@ router.get('/', function (req, res) {
     title: 'About page'
   };
   Object.assign(obj, req.app.locals.settings);
-  let Model = mongoose.model('skills');
+  let Model = mongoose.model('tools');
   Model
     .find()
     .then(items => {
-      Object.assign(obj, { items: items });
+      Object.assign(obj, { tools: items });
       res.render('pages/about', obj);
     },
     e => {

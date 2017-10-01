@@ -3,7 +3,7 @@ extends ../layout-index
 block content
     .welcome__auth
         a(class='log-button' href='#')
-            span.log-button__text Авторизоваться
+            span.log-button__text Войти
     .login-block-wrapper
         .flip-container
             .flipper
@@ -16,9 +16,9 @@ block content
                         a(href=href class=`user-nav__item ${cls}__item`)
                             span.user-nav__link= name
                     nav.user-nav
-                        +btns('works', 'Мои работы', 'welcome-nav--wide')
-                        +btns('about', 'Обо мне', 'welcome-nav')
-                        +btns('blog', 'Блог', 'welcome-nav')
+                        +btns('works', 'База отдыха', 'welcome-nav--wide')
+                        +btns('about', 'Информация', 'welcome-nav')
+                        +btns('blog', 'Новости', 'welcome-nav')
                 .login-block.login-backside
                     form#auth_form
                         .subtitle.login__title

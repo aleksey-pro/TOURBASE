@@ -22,40 +22,38 @@ html(lang="ru-RU")
                 polygon(points="0,100 1000,100 1000,0").triangle.triangle--fill--beige
             .about-left
                 .title.about__title
-                    svg.title__svg-bg
-                        use(xlink:href='assets/img/sprite.svg#pages--works--about_title')
-                    | Обо мне
+                    //svg.title__svg-bg
+                    //    use(xlink:href='assets/img/sprite.svg#pages--works--about_title')
+                    | Прокат
                 .about__user
                     .user-about
                         .user-about__picture
                         .user-about__title.subtitle
-                            | Кто я
+                            | услуги егеря
                         .user-about__text
-                            p Я веб разработчик из Санкт-Петербурга. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p Егери с опытом работы на базе помогут опытным рыбакам и станут инструкторами для новичков. Обучат навыкам управления квадроциклом и снегоходом. При необходимости доставят вас на место отдыха, помогут организовать его, а потом привезут на базу.
             .about-right
                 .about-data
                     .about-data__description.about-user-info
                         .about-user-info__title.subtitle
-                            | Чем я могу быть
+                            | Прокат оборудования
                             |
                             br
                             |
-                            | вам полезен
+                            | и инвентаря
                         .about-user-info__text
-                            | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
+                            | Стоимоссть можно узнать у нашего менеджера
                     .about-data__content
                         ul.skills
-                            each section in items
+                            each section in tools
                                 li.skills__item
                                     .skill-section
                                     .skill-section__title= section.section
                                     ul.skill-section__list
-                                        each skill in section.items
+                                        each tool in section.tools
                                             li.skills-section__item
-                                                svg(class="skill-circle" viewBox='0 0 110 110')
-                                                    circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)" class=`circle__second circle-${skill.value}`)
-                                                        .skill-name= skill.name
+                                                img(src=tool.path).skill-section-image
+                                                .skill-name= tool.name
 
         section.map
             #map

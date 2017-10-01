@@ -3,8 +3,8 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const config = require('../config.json');
 const mongoose = require('mongoose');
-require('../models/pic');
-require('../models/reviews');
+require('../models/pics');
+require('../models/newreviews');
 
 //http://javabeat.net/mongoose-nodejs-mongodb/
 
@@ -21,14 +21,14 @@ require('../models/reviews');
   
 router.get('/', function (req, res) {
   let obj = {
-    title: 'Мои работы'
+    title: 'О нашей базе'
   };
   Object.assign(obj, req.app.locals.settings);
   
   
-  Promise.all([mongoose.model('pic').find(), mongoose.model('reviews').find()])
+  Promise.all([mongoose.model('pics').find(), mongoose.model('newreviews').find()])
     .then(result => {
-      Object.assign(obj, {pic: result[0], reviews: result[1]});
+      Object.assign(obj, {pic: result[0], newreviews: result[1]});
       res.render('pages/works', obj);
     });
 });

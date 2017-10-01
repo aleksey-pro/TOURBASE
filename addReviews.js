@@ -22,11 +22,11 @@ mongoose.connect('mongodb://root:181621@ds111262.mlab.com:11262/portfolio');
 
 require('./models/db-close');
 require('./models/reviews');
-let Model = mongoose.model('reviews');
+let Model = mongoose.model('reviews'); //меняем здесь
 Model.remove({}).then(() => {
-  content.reviews.forEach( (item, idx, arr) => {
+  content.reviews.forEach( (item, idx, arr) => { //меняем здесь
     // console.log(item.ReviewList);
-    let recordDb = new Model({ reviews: item.result});
+    let recordDb = new Model({ reviews: item.result}); //меняем здесь
     recordDb.save().then(
       //обрабатываем и отправляем ответ в браузер
       i => {

@@ -11,6 +11,8 @@ Getting started:
 4. npm install
 6. run "gulp" command to start
 
+Run *git push heroku master* to deploy
+
 ### Примечание
 - сборщик browserify изменен на webpack
 - добавлен транспилер babel

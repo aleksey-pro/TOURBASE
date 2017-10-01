@@ -17,4 +17,4 @@ const mongoose = require('mongoose'),
   });
 
 //просим mongoose сохранить модель для ее дальнейшего использования
-mongoose.model('pic', PicSchema);
+mongoose.model('pics', PicSchema);

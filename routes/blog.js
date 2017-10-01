@@ -19,7 +19,7 @@ router.get('/', function (req, res) {
     title: 'Страница для блога'
   };
   Object.assign(obj, req.app.locals.settings);
-  const Model = mongoose.model('blog');
+  const Model = mongoose.model('news');
   //получаем список записей в блоге из базы
   Model
     .find()

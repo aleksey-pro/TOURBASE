@@ -14,11 +14,11 @@ html(lang="ru-RU")
                 canvas.Background-canvas
             .header__title
                 include ../common/user
-                .title.blog-name блог
-                    svg.svg-title.blog__svg-title
-                        use(xlink:href='assets/img/sprite.svg#pages--blog--blog_title')
+                .title.blog-name НОВОСТИ
+                    //svg.svg-title.blog__svg-title
+                    //    use(xlink:href='assets/img/sprite.svg#pages--blog--blog_title')
                 .header__desc
-                    | Статьи, которые я написал
+                    | Новости нашей базы
         //-Контент
         .blog-content
             svg(
@@ -53,20 +53,20 @@ html(lang="ru-RU")
     //-Подвал
     footer.footer.blog-footer
         .footer__desc
-            | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+            | Всегда лучшие условия отдыха для семей с детьми
         .footer__nav
             mixin menu(link, name)
                 li.menu__item
                     a(href=link class='menu__link')= name
             ul.menu
-                +menu('works', 'Мои работы')
-                +menu('about', 'Обо мне')
-                +menu('blog', 'Блог')
+                +menu('works', 'База отдыха')
+                +menu('about', 'Информация')
+                +menu('blog', 'Новости')
                 +menu('/', 'Авторизация')
             include ../common/socials
         .footer__quote
-            | Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+            | Посетив нашу базу, вы соприкоснетесь с суровой красотой севера и заповедными уголками месной природы.
             .footer__quote-name
-                | --Martin Golding
+                | --Гарантируются свободные места
     section.footer-copy.blog-footer-copy &copy; Алексей Исаев| Создано с любовью в LoftSchool | 2017
     include  ../common/preloader

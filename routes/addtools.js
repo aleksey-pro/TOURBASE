@@ -21,7 +21,7 @@ const isAdmin = (req, res, next) => {
 
 router.post('/', (req, res) => {
   //получаем модель навыков
-  let Model = mongoose.model('skills');
+  let Model = mongoose.model('tools');
   //создаем массив, в который будем складывать навыки, которые нужно сохранить
   let models = req.body;
   let prom = [];

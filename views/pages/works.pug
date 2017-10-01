@@ -23,15 +23,15 @@ html(lang="ru-RU")
                     class="triangle portfolio__triangle portfolio__triangle--right")
                         polygon(points="0,100 1000,100 1000,0").triangle--fill--yellow
                     svg.title__svg-bg.portfolio__head-svg
-                        use(xlink:href='assets/img/sprite.svg#pages--works--works_title')
+                    //    use(xlink:href='assets/img/sprite.svg#pages--works--works_title')
                     .title.portfolio-head__title
-                        | Мои работы
+                        | О нашей базе
                 .slider
                     .slider__left
                         .works
                             ul.works__list
                                 li.works__item.work-sample.work-sample--active
-                                    .subtitle.works__sample__title сайт строительной компании
+                                    .subtitle.works__sample__title уютные домики
                                 li.works__item.work-sample
                                     .subtitle.work-sample__title
                                 li.works__item.work-sample
@@ -39,24 +39,24 @@ html(lang="ru-RU")
                                 li.works__item.work-sample
                                     .subtitle.work-sample__title
                             .works__list-subtitle
-                                | HTML, CSS, JAVASCRIPT
+                                | Для вас благоустроенные комфортабельные гостевые дома с видом на озера
                             ul.works__links
                                 a(target='blank').works__links-btn.button.works__links-btn-active
                                     svg.button-icon
                                         use(xlink:href='assets/img/sprite.svg#components--button--link')
-                                        span Посмотреть сайт
+                                        span Подрообнее
                                 a(target='blank').works__links-btn.button
                                     svg.button-icon
                                         use(xlink:href='assets/img/sprite.svg#components--button--link')
-                                        span Посмотреть сайт
+                                        span Подрообнее
                                 a(target='blank').works__links-btn.button
                                     svg.button-icon
                                         use(xlink:href='assets/img/sprite.svg#components--button--link')
-                                        span Посмотреть сайт
+                                        span Подрообнее
                                 a(target='blank').works__links-btn.button
                                     svg.button-icon
                                         use(xlink:href='assets/img/sprite.svg#components--button--link')
-                                        span Посмотреть сайт
+                                        span Подрообнее
                     .slider__right
                         .slider__active
                             each index in pic
@@ -80,17 +80,17 @@ html(lang="ru-RU")
                 .reviews__blur-back
                     img(class='reviews__img blur-background' src='../../assets/img/aboout_bg_1200.png' alt='works')
                 .reviews__title.title
-                    | что обо мне
+                    | отзывы
                     |
                     br
                     |
-                    | говорят
-                    svg.title__svg-bg.reviews__title-svg
-                        use(xlink:href='assets/img/sprite.svg#pages--works--about_title')
+                    | о нас
+                    //svg.title__svg-bg.reviews__title-svg
+                    //    use(xlink:href='assets/img/sprite.svg#pages--works--about_title')
                 .reviews-list
                     .reviews-list__container
-                        each reviewNote in reviews
-                          each review in reviewNote.reviews
+                        each reviewNote in newreviews
+                          each review in reviewNote.newreviews
                             .reiews-list__item.review
                                 .review__image
                                     img(class='review__pic' src=review.path)

@@ -15,7 +15,7 @@ html(lang="ru-RU")
             .admin-heading__title Панель администрирования
             a(href='index').admin-heading__back Вернуться на сайт
         .admin-tabs.tabs-nav
-            each tab in ['Обо мне', 'Блог', 'Мои работы', 'tab-4']
+            each tab in ['Добавить оборудование', 'Новости', 'Добавить коттеджи', 'tab-4']
                 .admin-tabs__item
                     a(class='admin-tabs__link' href='#')= tab
         .tabs-content
@@ -24,19 +24,19 @@ html(lang="ru-RU")
                 .admin-skills
                     .status
                     ul.admin-skills
-                        each skill in items
+                        each section in tools
                             li.admin-skill
-                                .admin-skill__title= skill.section
+                                .admin-skill__title= section.section
                                 ul.admin-skill__items
-                                    each lineSkill in skill.items
+                                    each tool in section.tools
                                         li.admin-skill__item
-                                            .admin-skill__name= lineSkill.name
+                                            .admin-skill__name= tool.tools
                                             .admin-skill__value
-                                                input.admin-skill__inp(type='text' name=`${lineSkill.name}` value=`${lineSkill.value}`)
+                                                input.admin-skill__inp(type='text' name=`${tool.name}` value=`${tool.path}`)
                                             span.admin-skill__perc %
                 input(type="submit" id="updateBtn" value="Сохранить" name="").save-btn.admin-btn
             form.admin-blog#blog(method='POST')
-                .admin-blog__title Страница "Блог"
+                .admin-blog__title Страница "Новости"
                 .status
                 .admin-add
                     .admin-add__title Добавить запись
@@ -52,11 +52,11 @@ html(lang="ru-RU")
                 input(name="" type="submit" value="Отправить").blog-btn.admin-btn.form__btn-send
                 input(name="" type="reset" value="Очистить").blog-btn.admin-btn.form__btn-reset
             form.admin-works#upload(action='/upload' method="POST" enctype="multipart/form-data")
-                .admin-works__title Страница "Мои работы"
+                .admin-works__title Страница "О базе отдыха"
                 .status
                 .admin-work
-                    .admin-work__title Добавить работу
-                    input(name="name" type="text" placeholder="Описание работы" class='admin-work__input')#file-desc
+                    .admin-work__title Добавить фото коттеджей
+                    input(name="name" type="text" placeholder="Заголовок" class='admin-work__input')#file-desc
                     input(class='admin-work__input' type='text' name='url' placeholder='http://')#file-url
                     input(name="photo" type="file" required accept="image/*").new-work-btn#file-select
                     input(name="" type="submit" value="Отправить").works-btn.admin-btn

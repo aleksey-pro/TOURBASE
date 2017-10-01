@@ -22,10 +22,10 @@ router.get('/', function(req, res) {
     title: 'Админ панель'
   };
   Object.assign(obj, req.app.locals.settings);
-  let Model = mongoose.model('skills');
+  let Model = mongoose.model('tools');
   Model.find({}).then(
     items => {
-      Object.assign(obj, { items: items });
+      Object.assign(obj, { tools: items });
       res.render('pages/admin', obj);
     },
     e => {
@@ -41,7 +41,7 @@ router.post('/addpost', (req, res) => {
     return res.json({status: 'Укажите данные!'});
   }
   //создаем новую запись блога и передаем в нее поля из формы
-  const Model = mongoose.model('blog');
+  const Model = mongoose.model('news');
   let item = new Model({title: req.body.title, date: new Date(req.body.date), body: req.body.text});
   item.save().then(
     //обрабатываем и отправляем ответ в браузер
@@ -77,7 +77,7 @@ router.post('/upload', function (req, res) {
       return res.json({status: 'Не указан адрес сайта!'});
     }
     //если ошибок нет, то создаем новую picture и передаем в нее поле из формы
-    const Model = mongoose.model('pic');
+    const Model = mongoose.model('pics');
     
     fs.rename(files.photo.path, path.join(config.upload, files.photo.name), function (err) {
       if (err) {
@@ -107,9 +107,9 @@ router.post('/upload', function (req, res) {
   });
 });
 
-router.post('/addskills', (req, res) => {
+router.post('/addtools', (req, res) => {
   //получаем модель навыков
-  let Model = mongoose.model('skills');
+  let Model = mongoose.model('tools');
   //создаем массив, в который будем складывать навыки, которые нужно сохранить
   let models = req.body;
   let prom = [];

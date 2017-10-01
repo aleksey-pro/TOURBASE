@@ -39,10 +39,12 @@ mongoose.connect('mongodb://root:181621@ds111262.mlab.com:11262/portfolio').catc
 
 require('./models/db-close');
 //подключаем модели(сущности, описывающие коллекции базы данных)
-require('./models/blog');
-require('./models/pic');
+require('./models/news');
+require('./models/pics');
 require('./models/skills');
+require('./models/prokat-tools');
 require('./models/user');
+require('./models/newreviews');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
