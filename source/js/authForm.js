@@ -20,19 +20,19 @@ function formModule() {
     });
   }
   
-  function _submitEvent(e) {
-    e.preventDefault();
-    _validateForm($formLogin);
-    if (!_validateForm($formLogin)){
-      return false;
-    }else
-      prepareSendLogin();
-  }
+  // function _submitEvent(e) {
+  //   e.preventDefault();
+  //   _validateForm($formLogin);
+  //   if (!_validateForm($formLogin)){
+  //     return false;
+  //   }else
+  //     prepareSendLogin();
+  // }
     
   function _setUpListeners() {
     if (formLogin) {
-      formLogin.addEventListener('submit', _submitEvent);
-      formLogin.addEventListener('keydown', '.has-error', _removeError);
+      formLogin.addEventListener('submit', prepareSendLogin);// _submitEvent
+      // formLogin.addEventListener('keydown', '.has-error', _removeError);
     }
   }
     
