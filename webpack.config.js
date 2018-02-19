@@ -5,8 +5,8 @@ require('path');
 
 
 module.exports = {
-  // context: __dirname + '/source',
-  context: path.resolve(__dirname, "/source"),
+  context: __dirname + '/source',
+  // context: path.resolve(__dirname, "/source"),
   devtool: 'source-map',
   entry: {
     app: './js/app.js',
@@ -15,8 +15,8 @@ module.exports = {
   output: {
     publicPath: './',
     filename: 'assets/js/[name].bundle.js',
-    // path: __dirname + '/public'
-    path: path.resolve(__dirname, '/public')
+    path: __dirname + '/public'
+    // path: path.resolve(__dirname, '/public')
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
