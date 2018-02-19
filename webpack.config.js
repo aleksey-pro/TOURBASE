@@ -6,7 +6,7 @@ require('path');
 
 module.exports = {
   // context: __dirname + '/source',
-  context: path.resolve(__dirname, "source"),
+  context: path.resolve(__dirname, "/source"),
   devtool: 'source-map',
   entry: {
     app: './js/app.js',
