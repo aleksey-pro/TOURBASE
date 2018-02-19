@@ -16,7 +16,7 @@ module.exports = {
     publicPath: './',
     filename: 'assets/js/[name].bundle.js',
     // path: __dirname + '/public'
-    path.resolve(__dirname, '/public')
+    path: path.resolve(__dirname, '/public')
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
