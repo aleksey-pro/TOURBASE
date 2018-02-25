@@ -1,4 +1,3 @@
-// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 require('path');
@@ -6,7 +5,6 @@ require('path');
 
 module.exports = {
   context: __dirname + '/source',
-  // context: path.resolve(__dirname, "/source"),
   devtool: 'source-map',
   entry: {
     app: './js/app.js',
@@ -16,7 +14,6 @@ module.exports = {
     publicPath: './',
     filename: 'assets/js/[name].bundle.js',
     path: __dirname + '/public'
-    // path: path.resolve(__dirname, '/public')
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
@@ -66,6 +63,3 @@ module.exports = {
     ]
   }
 };
-
-
-//https://habrahabr.ru/post/309306/
