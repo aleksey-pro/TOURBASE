@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "author": "a.kalin & krabaton",
   "license": "ISC",
+  "engines": {
+    "node": "6.10.3"
+  },
+  "main": "app.js",
   "scripts": {},
   "devDependencies": {
     "babel-core": "^6.25.0",
